@@ -39,6 +39,13 @@ describe('Conversion', function () {
   }
 })
 
+describe('HSV conversion', function () {
+  it ('when h = 0, s = 0, v = 0 should convert to #000000', function () {
+    let { hex } = chroma.convert({ h: 0, s: 0, v: 0 });
+    assert.equal(hex, '#000000');
+  })
+})
+
 function close (numberA, numberB) {
   const difference = Math.abs(numberA - numberB)
   return difference < 0.0001
